@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    'nimbus-consensus',
+    'nimbus-primitives',
+    'pallets/aura-style-filter',
+    'pallets/author-inherent',
+    'pallets/author-slot-filter',
+    'allychain-template/runtime',
+    'allychain-template/node',
+]
+
+[profile.release]
+panic = 'unwind'

@@ -1,0 +1,42 @@
+[package]
+name = "pallet-author-inherent"
+version = "0.1.0"
+description = "Inject the block author via an inherent, and persist it via a Consensus digest"
+authors = ["PureStake"]
+edition = "2018"
+license = 'GPL-3.0-only'
+
+[dependencies]
+log = { version = "0.4", default-features = false }
+frame-support = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+frame-system = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+axia-scale-codec = { git = "https://github.com/axia-tech/axia-scale-codec", branch = "v2.3.1", version = "2.3.1", default-features = false, features = ["derive"] }
+sp-application-crypto = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+sp-authorship = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+sp-inherents = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+sp-runtime = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+sp-std = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+sp-api = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+nimbus-primitives = { path = "../../nimbus-primitives", default-features = false }
+scale-info = { git = "https://github.com/axia-tech/scale-info", branch = "v1.0.0", version = "1.0.0", default-features = false, features = ["derive"] }
+
+[dev-dependencies]
+sp-io = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+sp-core = { git = "https://github.com/axia-tech/axlib", branch = "dev", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+	"log/std",
+	"frame-support/std",
+	"frame-system/std",
+	"axia-scale-codec/std",
+	"sp-application-crypto/std",
+	"sp-authorship/std",
+	"sp-inherents/std",
+	"sp-runtime/std",
+	"sp-std/std",
+	"sp-api/std",
+	"nimbus-primitives/std",
+	"scale-info/std",
+]
